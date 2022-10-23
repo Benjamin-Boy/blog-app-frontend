@@ -34,35 +34,9 @@ const App = () => {
   const [author, setAuthor] = useState("");
   const [search, setSearch] = useState("");
 
-  const prod = "prod";
-
-  console.log(posts);
-
   // useEffect(() => {
   //   let newData = [];
 
-  //   if (prod === "prod") {
-  //     newData = data.map((post) => {
-  //       return {
-  //         id: post.id,
-  //         title: post.title,
-  //         description: post.description,
-  //         text: post.text,
-  //         author: {
-  //           authorID: post.author.id,
-  //           name: post.author.name,
-  //         },
-  //         category: {
-  //           categoryID: post.category.id,
-  //           label: post.category.label,
-  //         },
-  //         date: dateFormat(post.date),
-  //         image: {
-  //           media: post.image.media,
-  //         },
-  //       };
-  //     });
-  //   } else {
   //     newData = data.map((post) => {
   //       return {
   //         id: post.id,
@@ -83,7 +57,6 @@ const App = () => {
   //         },
   //       };
   //     });
-  //   }
 
   //   setPosts(newData);
   // }, []);
@@ -105,28 +78,28 @@ const App = () => {
   };
 
   const resetFiltering = () => {
-    const newData = data.map((post) => {
-      return {
-        id: post.id,
-        title: post.attributes.title,
-        description: post.attributes.description,
-        text: post.attributes.text,
-        author: {
-          authorID: post.attributes.author.data.id,
-          name: post.attributes.author.data.attributes.name,
-        },
-        category: {
-          categoryID: post.attributes.category.data.id,
-          label: post.attributes.category.data.attributes.label,
-        },
-        date: dateFormat(post.attributes.createdAt),
-        image: {
-          media: `http://localhost:1337${post.attributes.image.data.attributes.media.data.attributes.url}`,
-        },
-      };
-    });
+    // const newData = data.map((post) => {
+    //   return {
+    //     id: post.id,
+    //     title: post.attributes.title,
+    //     description: post.attributes.description,
+    //     text: post.attributes.text,
+    //     author: {
+    //       authorID: post.attributes.author.data.id,
+    //       name: post.attributes.author.data.attributes.name,
+    //     },
+    //     category: {
+    //       categoryID: post.attributes.category.data.id,
+    //       label: post.attributes.category.data.attributes.label,
+    //     },
+    //     date: dateFormat(post.attributes.createdAt),
+    //     image: {
+    //       media: `http://localhost:1337${post.attributes.image.data.attributes.media.data.attributes.url}`,
+    //     },
+    //   };
+    // });
 
-    setPosts(newData);
+    setPosts(data);
     setCategory("");
     setAuthor("");
     setSearch("");

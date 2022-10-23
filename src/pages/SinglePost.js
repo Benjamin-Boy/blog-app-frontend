@@ -5,6 +5,10 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 
+// Imports services
+import dateFormat from "../services/dateFormat";
+
+// Imports SCSS files
 import "../styles/singlePost.scss";
 
 import defaultImage from "../assets/images/1009_536x354_70107d976e.jpg";
@@ -29,7 +33,7 @@ const SinglePost = ({ posts, filterAuthors }) => {
                 {author.name}
               </Link>
             </h3>
-            <h4>{date}</h4>
+            <h4>{dateFormat(date)}</h4>
             <div className="social-media-icons">
               <Link to="https://www.facebook.com/" className="social-btn">
                 <AiFillFacebook className="facebook" /> Share
